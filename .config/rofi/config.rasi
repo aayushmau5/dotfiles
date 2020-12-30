@@ -1,0 +1,7 @@
+configuration {
+	color-enabled: "true";
+	color-window: "argb:FF292C34, argb:FF292C34, argb:FF292C34";
+	color-normal: "argb:00292C34, #d8dee8, argb:00292C34, argb:00292C34, #6DABCD";
+	color-active: "#6DABCD, #268bd2, #6DABCD, #268bd2, #205171";
+	color-urgent: "#6DABCD, #f3843d, #6DABCD, #268bd2, #ffc39c";
+}
