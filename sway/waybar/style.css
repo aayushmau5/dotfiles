@@ -65,6 +65,8 @@
 #network,
 #pulseaudio,
 #temperature,
+#backlight,
+#disk,
 #tray {
     padding-left: 10px;
     padding-right: 10px;
@@ -80,6 +82,10 @@
     animation-iteration-count: infinite;
     animation-direction: alternate;
     color: #FFB935;
+}
+
+#disk {
+	color: #C277D4;
 }
 
 #battery.warning {
@@ -182,6 +188,7 @@
 
 #window {
     font-weight: bold;
+    margin-right: 20px;
 }
 
 #workspaces button {

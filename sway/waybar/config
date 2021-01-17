@@ -26,6 +26,7 @@
         "sway/window"
     ],
     "modules-right": [
+    	"disk",
         "memory",
         "cpu",
         "temperature",
@@ -62,6 +63,13 @@
             ""  // Icon: battery-empty
         ],
         "tooltip": true
+    },
+
+    "disk": {
+    	"interval": 60,
+    	"format": "  {used}",
+    	"tooltip": true,
+	"path": "/"
     },
 
     "clock#time": {
