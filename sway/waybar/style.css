@@ -48,7 +48,7 @@
 
 /* The whole bar */
 #waybar {
-    background: #323232;
+    background: #292C34;
     color: white;
     font-family: Cantarell, Noto Sans, sans-serif;
     font-size: 13px;
@@ -79,6 +79,7 @@
     animation-timing-function: linear;
     animation-iteration-count: infinite;
     animation-direction: alternate;
+    color: #FFB935;
 }
 
 #battery.warning {
@@ -101,10 +102,12 @@
 
 #clock {
     font-weight: bold;
+    color: #70D1EF;
 }
 
 #cpu {
   /* No styles */
+    color: #E1C28D;
 }
 
 #cpu.warning {
@@ -119,6 +122,7 @@
     animation-timing-function: linear;
     animation-iteration-count: infinite;
     animation-direction: alternate;
+    color: #95BC7B;
 }
 
 #memory.warning {
@@ -129,6 +133,10 @@
     color: red;
     animation-name: blink-critical;
     animation-duration: 2s;
+}
+
+#backlight {
+	color: #67A1C5;
 }
 
 #mode {
@@ -148,6 +156,7 @@
 
 #pulseaudio {
     /* No styles */
+	color: #FF8888;
 }
 
 #pulseaudio.muted {
@@ -159,7 +168,7 @@
 }
 
 #temperature {
-    /* No styles */
+    color: #E1C28D;
 }
 
 #temperature.critical {

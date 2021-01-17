@@ -26,15 +26,16 @@
         "sway/window"
     ],
     "modules-right": [
-        "network",
         "memory",
         "cpu",
         "temperature",
+	"backlight",
         "custom/keyboard-layout",
         "battery",
         "clock#date",
         "clock#time",
 	"pulseaudio",
+        "network",
         "tray"
     ],
 
@@ -65,7 +66,7 @@
 
     "clock#time": {
         "interval": 1,
-        "format": "{:%H:%M}",
+        "format": "{:%I:%M %p}",
         "tooltip": false
     },
 
@@ -135,6 +136,13 @@
             "focused": "",
             "default": ""
         }
+    },
+
+    "backlight" : {
+    	"interval": 5,
+    	"device": "intel_backlight",
+	"format": "{icon} {percent}%",
+    	"format-icons": ["", ""]
     },
 
     "pulseaudio": {

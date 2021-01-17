@@ -4,7 +4,7 @@
 #
 # Read `man 5 sway` for a complete reference.
 
-
+# font
 font pango:Noto Sans Bold 10
 
 ### Variables
@@ -27,12 +27,16 @@ set $menu wofi --show drun
 gaps inner 7
 gaps outer 1
 
+# Remove the title bar and set borders
 default_border pixel 1
 
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 output * bg /home/aayushmau5/Downloads/blurry-sky.jpg fill
+
+# Start the network-manager applet
+exec --no-startup-id nm-applet --indicator
 
 #
 # Example configuration:
@@ -58,12 +62,13 @@ exec swayidle -w \
 #
 # Example configuration:
 #
-#   input "2:14:SynPS/2_Synaptics_TouchPad" {
-#       dwt enabled
-#       tap enabled
-#       natural_scroll enabled
-#       middle_emulation enabled
-#   }
+# Enable touch on tap on touchpad
+input "1267:12424:DELL083F:00_04F3:3088_Touchpad" {
+     dwt enabled
+     tap enabled
+     natural_scroll enabled
+     middle_emulation enabled
+}
 #
 # You can get the names of your inputs by running: swaymsg -t get_inputs
 # Read `man 5 sway-input` for more information about this section.
@@ -134,8 +139,8 @@ client.urgent           $urgent-bg-color   $urgent-bg-color   $text-color       
     bindsym $mod+Shift+c reload
 
     # Exit sway (logs you out of your Wayland session)
-    bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
-    # bindsym $mod+Shift+e exec ~/.config/i3/scripts/shutdown_menu -p rofi -c
+    # bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
+    bindsym $mod+Shift+e exec ~/.config/sway/scripts/shutdown_menu -p rofi -c
 #
 # Moving around:
 #
@@ -220,7 +225,9 @@ client.urgent           $urgent-bg-color   $urgent-bg-color   $text-color       
     bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl s 100+
     # Decrease backlight
     bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl s 100-
+    # Screenshot(tool: wayland-screenshot)
     bindsym Print exec wayland-screenshot
+    # Volume control keys
     bindsym XF86AudioRaiseVolume exec amixer -D pulse sset Master 5%+
     bindsym XF86AudioLowerVolume exec amixer -D pulse sset Master 5%-
     bindsym XF86AudioMute exec amixer sset Master toggle
