@@ -28,12 +28,12 @@ gaps inner 7
 gaps outer 1
 
 # Remove the title bar and set borders
-default_border pixel 1
+default_border pixel 2
 
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg /home/aayushmau5/Downloads/blurry-sky.jpg fill
+output * bg /home/aayushmau5/Downloads/dark.png stretch
 
 # Start the network-manager applet
 exec --no-startup-id nm-applet --indicator
@@ -41,6 +41,7 @@ exec --no-startup-id nm-applet --indicator
 #
 # Example configuration:
 #
+# Dual Monitor Config(Supports hotplub out of the box)
 output eDP-1 resolution 1920x1080 position 0,0
 output HDMI-A-1 resolution 1920x1080 position 1920,0
 #

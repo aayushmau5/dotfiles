@@ -2,9 +2,9 @@
 
 #### Sway
 
-![Desktop](screenshots/sway-desktop.png)
+![Neofetch](screenshots/another_rice.png)
 
-![Neofetch](screenshots/sway-neofetch.png)
+![Desktop](screenshots/ricing.png)
 
 #### i3
 

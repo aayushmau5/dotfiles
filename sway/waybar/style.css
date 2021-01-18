@@ -48,7 +48,7 @@
 
 /* The whole bar */
 #waybar {
-    background: #292C34;
+    background: #2e3440;
     color: white;
     font-family: Cantarell, Noto Sans, sans-serif;
     font-size: 13px;
@@ -70,6 +70,10 @@
 #tray {
     padding-left: 10px;
     padding-right: 10px;
+    border:1px solid #242831;
+    border-radius: 15px;
+    margin: 2px 3px;
+    background: #242831;
 }
 
 
@@ -183,12 +187,11 @@
 
 #tray {
     /* No styles */
-	border-left: 1px solid white;
 }
 
 #window {
     font-weight: bold;
-    margin-right: 20px;
+    margin-right: 100px;
 }
 
 #workspaces button {
