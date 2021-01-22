@@ -26,6 +26,7 @@
         "sway/window"
     ],
     "modules-right": [
+        "network",
     	"disk",
         "memory",
         "cpu",
@@ -36,7 +37,6 @@
         "clock#date",
         "clock#time",
 	"pulseaudio",
-        "network",
         "tray"
     ],
 
@@ -114,7 +114,7 @@
 
     "network": {
         "interval": 5,
-        "format-wifi": "  {essid} ({signalStrength}%)", // Icon: wifi
+        "format-wifi": "  {essid} ({signalStrength}%) ( {bandwidthDownBits}  | {bandwidthUpBits}  )", // Icon: wifi
         "format-ethernet": "  {ifname}: {ipaddr}/{cidr}", // Icon: ethernet
         "format-disconnected": "⚠  Disconnected",
         "tooltip-format": "{ifname}: {ipaddr}"
@@ -127,7 +127,7 @@
 
     "sway/window": {
         "format": "{}",
-        "max-length": 120
+        "max-length": 100
     },
 
     "sway/workspaces": {

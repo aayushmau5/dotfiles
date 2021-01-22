@@ -151,7 +151,7 @@
 
 #mode {
     background: #64727D;
-    border-top: 2px solid white;
+    border-top: 2px solid transparent;
     /* To compensate for the top border and still have vertical centering */
     padding-bottom: 2px;
 }
@@ -191,6 +191,7 @@
 
 #window {
     font-weight: bold;
+    margin-left: 20px;
     margin-right: 100px;
 }
 
@@ -200,6 +201,11 @@
     padding-left: 10px;
     padding-right: 10px;
     color: #ccc;
+    font-family: "Jetbrains Mono";
+    border-radius: 25px;
+    margin-left: 2px;
+    margin-top: 2px;
+    margin-bottom: 2px;
 }
 
 #workspaces button.focused {
@@ -214,6 +220,6 @@
 }
 
 #workspaces button:hover {
-	border-color: white;
+	border-color: inherit;
 	color: gray;
 }

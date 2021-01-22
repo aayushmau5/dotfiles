@@ -1,27 +1,21 @@
-# Default config for sway
-#
-# Copy this to ~/.config/sway/config and edit it to your liking.
-#
 # Read `man 5 sway` for a complete reference.
 
 # font
 font pango:Noto Sans Bold 10
 
 ### Variables
-#
-# Logo key. Use Mod1 for Alt.
-set $mod Mod4
-# Home row direction keys, like vim
-set $left h
-set $down j
-set $up k
-set $right l
-# Your preferred terminal emulator
-set $term alacritty
-# Your preferred application launcher
-# Note: pass the final command to swaymsg so that the resulting window can be opened
-# on the original workspace that the command was run on.
-set $menu wofi --show drun
+# set {{{
+set {
+    $mod Mod4
+    $left h
+    $down j
+    $up k   
+    $right l
+    $term alacritty
+    $menu wofi --show drun
+}
+#  }}}
+
 
 # Set inner/outer gaps
 gaps inner 7
@@ -30,26 +24,15 @@ gaps outer 1
 # Remove the title bar and set borders
 default_border pixel 2
 
-### Output configuration
-#
-# Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
+# wallpaper
 output * bg /home/aayushmau5/Downloads/dark.png stretch
 
-# Start the network-manager applet
-exec --no-startup-id nm-applet --indicator
-
-#
-# Example configuration:
-#
-# Dual Monitor Config(Supports hotplub out of the box)
+# Dual Monitor Config(Supports hotplug out of the box)
 output eDP-1 resolution 1920x1080 position 0,0
 output HDMI-A-1 resolution 1920x1080 position 1920,0
-#
-# You can get the names of your outputs by running: swaymsg -t get_outputs
+# Get the names of your outputs by running: swaymsg -t get_outputs
 
 ### Idle configuration
-#
-# Example configuration:
 #
 exec swayidle -w \
          timeout 1800 'swaylock -f -c 000000' \
@@ -61,9 +44,6 @@ exec swayidle -w \
 # resumed. It will also lock your screen before your computer goes to sleep.
 
 ### Input configuration
-#
-# Example configuration:
-#
 # Enable touch on tap on touchpad
 input "1267:12424:DELL083F:00_04F3:3088_Touchpad" {
      dwt enabled
@@ -77,8 +57,8 @@ input "1267:12424:DELL083F:00_04F3:3088_Touchpad" {
 
 set $ws1 "1  "
 set $ws2 "2  "
-set $ws3 "3  "
-set $ws4 "4  "
+set $ws3 "3  "
+set $ws4 "4  "
 set $ws5 "5  "
 set $ws6 "6  "
 set $ws7 "7  "
@@ -89,18 +69,25 @@ set $ws10 "10"
 # autostart start applications + bind program to workspace:
 assign [class="alacritty"] $ws1
 for_window [class=alacritty] focus
+
 assign [class="(?i)firefox"] $ws2
 for_window [class=(?i)firefox] focus
-assign [class="Thunar"] $ws3
-for_window [class=Thunar] focus
-assign [class="Code"] $ws4
+
+assign [class="Code"] $ws3
 for_window [class=Code] focus
+
+assign [class="Thunar"] $ws4
+for_window [class=Thunar] focus
+
 assign [class="discord"] $ws5
 for_window [class=discord] focus
 assign [class="TelegramDesktop"] $ws6
+
 for_window [class=TelegramDesktop] focus
+
 assign [class="Spotify"] $ws7
 for_window [class=Spotify] focus
+
 for_window [app_id="zenity"] floating enable
 
 set $bg-color            #6DABCD
@@ -121,7 +108,6 @@ client.urgent           $urgent-bg-color   $urgent-bg-color   $text-color       
 #
 # Basics:
 #
-    # Start a terminal
     bindsym $mod+Return exec $term
 
     # Kill focused window
@@ -140,29 +126,27 @@ client.urgent           $urgent-bg-color   $urgent-bg-color   $text-color       
     # Reload the configuration file
     bindsym $mod+Shift+c reload
 
-    # Exit sway (logs you out of your Wayland session)
     # bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
     bindsym $mod+Shift+e exec ~/.config/sway/scripts/shutdown_menu -p rofi -c
+
 #
 # Moving around:
 #
-    # Move your focus around
     bindsym $mod+$left focus left
     bindsym $mod+$down focus down
     bindsym $mod+$up focus up
     bindsym $mod+$right focus right
-    # Or use $mod+[up|down|left|right]
+
     bindsym $mod+Left focus left
     bindsym $mod+Down focus down
     bindsym $mod+Up focus up
     bindsym $mod+Right focus right
 
-    # Move the focused window with the same, but add Shift
     bindsym $mod+Shift+$left move left
     bindsym $mod+Shift+$down move down
     bindsym $mod+Shift+$up move up
     bindsym $mod+Shift+$right move right
-    # Ditto, with arrow keys
+
     bindsym $mod+Shift+Left move left
     bindsym $mod+Shift+Down move down
     bindsym $mod+Shift+Up move up
@@ -170,7 +154,6 @@ client.urgent           $urgent-bg-color   $urgent-bg-color   $text-color       
 #
 # Workspaces:
 #
-    # Switch to workspace
     bindsym $mod+1 workspace $ws1
     bindsym $mod+2 workspace $ws2
     bindsym $mod+3 workspace $ws3
@@ -181,7 +164,7 @@ client.urgent           $urgent-bg-color   $urgent-bg-color   $text-color       
     bindsym $mod+8 workspace $ws8
     bindsym $mod+9 workspace $ws9
     bindsym $mod+0 workspace $ws10
-    # Move focused container to workspace
+
     bindsym $mod+Shift+1 move container to workspace $ws1
     bindsym $mod+Shift+2 move container to workspace $ws2
     bindsym $mod+Shift+3 move container to workspace $ws3
@@ -192,43 +175,36 @@ client.urgent           $urgent-bg-color   $urgent-bg-color   $text-color       
     bindsym $mod+Shift+8 move container to workspace $ws8
     bindsym $mod+Shift+9 move container to workspace $ws9
     bindsym $mod+Shift+0 move container to workspace $ws10
-    # Note: workspaces can have any name you want, not just numbers.
-    # We just use 1-10 as the default.
-#
+
 # Layout stuff:
 #
-    # You can "split" the current object of your focus with
-    # $mod+b or $mod+v, for horizontal and vertical splits
-    # respectively.
     bindsym $mod+b splith
     bindsym $mod+v splitv
 
-    # Switch the current container between different layout styles
     bindsym $mod+s layout stacking
     bindsym $mod+w layout tabbed
     bindsym $mod+e layout toggle split
 
-    # Make the current focus fullscreen
     bindsym $mod+f fullscreen
 
-    # Toggle the current focus between tiling and floating mode
     bindsym $mod+Shift+space floating toggle
 
-    # Swap focus between the tiling area and the floating area
     bindsym $mod+space focus mode_toggle
 
-    # Move focus to the parent container
     bindsym $mod+a focus parent
 
     bindsym $mod+i exec rofi -modi drun -show drun -line-padding 4 \
                 -columns 2 -padding 50 -hide-scrollbar \
                 -show-icons -drun-icon-theme "Arc-X-D" -font "Droid Sans Regular 10"
+
     # Increase backlight
     bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl s 100+
     # Decrease backlight
     bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl s 100-
+
     # Screenshot(tool: wayland-screenshot)
     bindsym Print exec wayland-screenshot
+
     # Volume control keys
     bindsym XF86AudioRaiseVolume exec amixer -D pulse sset Master 5%+
     bindsym XF86AudioLowerVolume exec amixer -D pulse sset Master 5%-
@@ -250,22 +226,16 @@ client.urgent           $urgent-bg-color   $urgent-bg-color   $text-color       
 # Resizing containers:
 #
 mode "resize" {
-    # left will shrink the containers width
-    # right will grow the containers width
-    # up will shrink the containers height
-    # down will grow the containers height
     bindsym $left resize shrink width 10px
     bindsym $down resize grow height 10px
     bindsym $up resize shrink height 10px
     bindsym $right resize grow width 10px
 
-    # Ditto, with arrow keys
     bindsym Left resize shrink width 10px
     bindsym Down resize grow height 10px
     bindsym Up resize shrink height 10px
     bindsym Right resize grow width 10px
 
-    # Return to default mode
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
@@ -290,5 +260,14 @@ bar {
 
     swaybar_command waybar
 }
+
+# exec {{{
+
+exec {
+    --no-startup-id nm-applet --indicator
+    --no-startup-id dunst
+}
+
+#  }}}
 
 include /etc/sway/config.d/*
