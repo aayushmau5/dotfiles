@@ -20,10 +20,9 @@
 
     "modules-left": [
         "sway/workspaces",
-        "sway/mode"
     ],
     "modules-center": [
-        "sway/window"
+        "sway/mode",
     ],
     "modules-right": [
         "network",
@@ -31,12 +30,12 @@
         "memory",
         "cpu",
         "temperature",
-	"backlight",
+	    "backlight",
         "custom/keyboard-layout",
         "battery",
         "clock#date",
         "clock#time",
-	"pulseaudio",
+	    "pulseaudio",
         "tray"
     ],
 

@@ -11,27 +11,26 @@
  * -------------------------------------------------------------------------- */
 
 @keyframes blink-warning {
-    70% {
-        color: white;
-    }
+  70% {
+    color: white;
+  }
 
-    to {
-        color: white;
-        background-color: orange;
-    }
+  to {
+    color: white;
+    background-color: orange;
+  }
 }
 
 @keyframes blink-critical {
-    70% {
-      color: white;
-    }
+  70% {
+    color: white;
+  }
 
-    to {
-        color: white;
-        background-color: red;
-    }
+  to {
+    color: white;
+    background-color: red;
+  }
 }
-
 
 /* -----------------------------------------------------------------------------
  * Base styles
@@ -39,20 +38,20 @@
 
 /* Reset all styles */
 * {
-    border: none;
-    border-radius: 0;
-    min-height: 0;
-    margin: 0;
-    padding: 0;
+  border: none;
+  border-radius: 0;
+  min-height: 0;
+  margin: 0;
+  padding: 0;
 }
 
 /* The whole bar */
 #waybar {
-    background: #2e3440;
-    color: white;
-    font-family: Cantarell, Noto Sans, sans-serif;
-    font-size: 13px;
-    font-weight: bold;
+  background: #2e3440;
+  color: white;
+  font-family: Cantarell, Noto Sans, sans-serif;
+  font-size: 12px;
+  font-weight: bold;
 }
 
 /* Each module */
@@ -68,158 +67,162 @@
 #backlight,
 #disk,
 #tray {
-    padding-left: 10px;
-    padding-right: 10px;
-    border:1px solid #242831;
-    border-radius: 15px;
-    margin: 2px 3px;
-    background: #242831;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 15px;
+  margin: 2px 2px;
+  margin-bottom: 4px;
+  background: #242831;
+  outline: none;
 }
-
 
 /* -----------------------------------------------------------------------------
  * Module styles
  * -------------------------------------------------------------------------- */
 
 #battery {
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-    color: #FFB935;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  color: #ffb935;
 }
 
 #disk {
-	color: #C277D4;
+  color: #c277d4;
 }
 
 #battery.warning {
-    color: orange;
+  color: orange;
 }
 
 #battery.critical {
-    color: red;
+  color: red;
 }
 
 #battery.warning.discharging {
-    animation-name: blink-warning;
-    animation-duration: 3s;
+  animation-name: blink-warning;
+  animation-duration: 3s;
 }
 
 #battery.critical.discharging {
-    animation-name: blink-critical;
-    animation-duration: 2s;
+  animation-name: blink-critical;
+  animation-duration: 2s;
 }
 
 #clock {
-    font-weight: bold;
-    color: #70D1EF;
+  font-weight: bold;
+  color: #70d1ef;
 }
 
 #cpu {
   /* No styles */
-    color: #E1C28D;
+  color: #e1c28d;
 }
 
 #cpu.warning {
-    color: orange;
+  color: orange;
 }
 
 #cpu.critical {
-    color: red;
+  color: red;
 }
 
 #memory {
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-    color: #95BC7B;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  color: #95bc7b;
 }
 
 #memory.warning {
-    color: orange;
+  color: orange;
 }
 
 #memory.critical {
-    color: red;
-    animation-name: blink-critical;
-    animation-duration: 2s;
+  color: red;
+  animation-name: blink-critical;
+  animation-duration: 2s;
 }
 
 #backlight {
-	color: #67A1C5;
+  color: #67a1c5;
 }
 
 #mode {
-    background: #64727D;
-    border-top: 2px solid transparent;
-    /* To compensate for the top border and still have vertical centering */
-    padding-bottom: 2px;
+  background: #64727d;
+  border-top: 2px solid transparent;
+  /* To compensate for the top border and still have vertical centering */
+  padding-bottom: 2px;
 }
 
 #network {
-    /* No styles */
+  /* No styles */
 }
 
 #network.disconnected {
-    color: orange;
+  color: orange;
 }
 
 #pulseaudio {
-    /* No styles */
-	color: #FF8888;
+  /* No styles */
+  color: #ff8888;
 }
 
 #pulseaudio.muted {
-    /* No styles */
+  /* No styles */
 }
 
 #custom-spotify {
-    color: rgb(102, 220, 105);
+  color: rgb(102, 220, 105);
 }
 
 #temperature {
-    color: #E1C28D;
+  color: #e1c28d;
 }
 
 #temperature.critical {
-    color: red;
+  color: red;
 }
 
 #tray {
-    /* No styles */
+  /* No styles */
 }
 
 #window {
-    font-weight: bold;
-    margin-left: 20px;
-    margin-right: 100px;
+  font-weight: bold;
+  margin-left: 20px;
+  margin-right: 100px;
+  font-size: 13px;
+}
+
+#workspaces {
+  background: #242831;
+  font-size: 12px;
+  padding: 0 2px;
 }
 
 #workspaces button {
-    border-top: 3px solid transparent;
-    padding-bottom: 2px;
-    padding-left: 10px;
-    padding-right: 10px;
-    color: #ccc;
-    font-family: "Jetbrains Mono";
-    border-radius: 25px;
-    margin-left: 2px;
-    margin-top: 2px;
-    margin-bottom: 2px;
+  border-top: 3px solid transparent;
+  padding-bottom: 2px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #ccc;
+  font-family: "Jetbrains Mono";
+  margin-left: 2px;
+  margin-top: 2px;
+  margin-bottom: 2px;
 }
 
 #workspaces button.focused {
-    border-color: gray;
-    color: white;
-    background-color: gray;
+  color: white;
+  background-color: transparent;
 }
 
 #workspaces button.urgent {
-    border-color: #c9545d;
-    color: #c9545d;
+  color: #c9545d;
 }
 
 #workspaces button:hover {
-	border-color: inherit;
-	color: gray;
+  background: none;
+  color: white;
 }
