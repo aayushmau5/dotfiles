@@ -1,14 +1,14 @@
 {
-  "window.zoomLevel": 0,
-  // editor configs
+  "window.zoomLevel": 0.3,
   "editor.fontSize": 15,
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.fontLigatures": true,
   // "editor.fontFamily": "'Cascadia Code', 'Fira Code', 'JetBrains Mono'",
-  "editor.fontFamily": "'SF Mono'",
+  "editor.fontFamily": "'Fira Code'",
+  // "editor.fontFamily": "'SF Mono'",
   "editor.cursorBlinking": "smooth",
-  "editor.fontWeight": "500",
+  "editor.fontWeight": "300",
   "editor.lineHeight": 23,
   "editor.minimap.enabled": false,
   "editor.rulers": [
@@ -34,10 +34,9 @@
   //   "statusBar.debuggingBackground": "#263238"
   // },
   "workbench.startupEditor": "newUntitledFile",
-  "workbench.experimental.useCustomHover": true,
   "workbench.list.automaticKeyboardNavigation": false,
   // terminal configs
-  "terminal.integrated.fontSize": 14,
+  "terminal.integrated.fontSize": 15,
   "terminal.integrated.cursorBlinking": true,
   // "terminal.integrated.cursorStyle": "line",
   "terminal.integrated.fontFamily": "'JetBrainsMono Nerd Font'",
@@ -47,7 +46,22 @@
     "editor.defaultFormatter": "ms-vscode.cpptools"
   },
   "[jsonc]": {
-    "editor.defaultFormatter": "vscode.json-language-features"
+    "editor.defaultFormatter": "vscode.json-language-features",
+  },
+  "[markdown]": {
+    "editor.wordWrap": "on",
+    "editor.quickSuggestions": false,
+    "editor.fontFamily": "'SF Mono'",
+  },
+  "[json]": {
+    "editor.quickSuggestions": {
+      "strings": true
+    },
+    "editor.suggest.insertMode": "replace",
+    "gitlens.codeLens.scopes": [
+      "document"
+    ],
+    "editor.fontFamily": "'SF Mono'",
   },
   // Vim Configs
   "vim.useSystemClipboard": true,
@@ -266,7 +280,7 @@
   "telemetry.enableTelemetry": false,
   // misc
   "material-icon-theme.showWelcomeMessage": false,
-  "workbench.colorTheme": "GitHub Dark Dimmed",
+  "workbench.colorTheme": "GitHub Dark",
   "svg.preview.mode": "svg",
   // "workbench.colorCustomizations": {
   //   "[One Dark Pro]": {
