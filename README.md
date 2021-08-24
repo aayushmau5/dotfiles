@@ -1,10 +1,12 @@
 ### Screenshots
 
+Pretty minimal ;)
+
 #### Sway
 
-![Neofetch](screenshots/another_rice.png)
+![Desktop](screenshots/sway-new-1.png)
 
-![Desktop](screenshots/ricing.png)
+![Neofetch](screenshots/sway-new-2.png)
 
 #### i3
 

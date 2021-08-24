@@ -1,11 +1,3 @@
-// =============================================================================
-//
-// Waybar configuration
-//
-// Configuration reference: https://github.com/Alexays/Waybar/wiki/Configuration
-//
-// =============================================================================
-
 {
     // -------------------------------------------------------------------------
     // Global configuration
@@ -13,27 +5,24 @@
 
     "layer": "top",
 
-    "position": "top",
+    "position": "bottom",
 
     // If height property would be not present, it'd be calculated dynamically
-    "height": 30,
+    "height": 20,
 
     "modules-left": [
         "sway/workspaces",
+        "sway/mode",
     ],
     "modules-center": [
-        "sway/mode",
     ],
     "modules-right": [
         "network",
-    	"disk",
         "memory",
         "cpu",
-        "temperature",
 	    "backlight",
         "custom/keyboard-layout",
         "battery",
-        "clock#date",
         "clock#time",
 	    "pulseaudio",
         "tray"
@@ -50,42 +39,38 @@
             "warning": 30,
             "critical": 15
         },
-        // Connected to AC
-        "format": "  {icon}  {capacity}%", // Icon: bolt
-        // Not connected to AC
-        "format-discharging": "{icon}  {capacity}%",
-        "format-icons": [
-            "", // Icon: battery-full
-            "", // Icon: battery-three-quarters
-            "", // Icon: battery-half
-            "", // Icon: battery-quarter
-            ""  // Icon: battery-empty
-        ],
-        "tooltip": true
+        "tooltip": true,
+        "format": "{icon}  {capacity}%",
+        "format-charging": "  {capacity}%",
+        "format-plugged": "  {capacity}%",
+        "format-alt": "{time} {icon}",
+        "format-icons": ["", "", "", "", ""]
     },
 
     "disk": {
     	"interval": 60,
     	"format": "  {used}",
     	"tooltip": true,
-	"path": "/"
+	    "path": "/"
     },
 
     "clock#time": {
         "interval": 1,
-        "format": "{:%I:%M %p}",
+        "format": "{:%a %d %b %I:%M %p}",
         "tooltip": false
+        // "tooltip-format": "{:%e %B %Y}"
+        // {:%I:%M %p} 
     },
 
     "clock#date": {
       "interval": 10,
-      "format": "  {:%e %b %Y}", // Icon: calendar-alt
-      "tooltip-format": "{:%e %B %Y}"
+      "format": "{:%e %b %Y}", // Icon: calendar-alt
+      "tooltip": false
     },
 
     "cpu": {
         "interval": 5,
-        "format": "  {usage}% ({load})", // Icon: microchip
+        "format": "  {usage}%",
         "states": {
           "warning": 70,
           "critical": 90
@@ -104,7 +89,7 @@
 
     "memory": {
         "interval": 5,
-        "format": "  {}%", // Icon: memory
+        "format": "  {}%",
         "states": {
             "warning": 70,
             "critical": 90
@@ -113,9 +98,9 @@
 
     "network": {
         "interval": 5,
-        "format-wifi": "  {essid} ({signalStrength}%) ( {bandwidthDownBits}  | {bandwidthUpBits}  )", // Icon: wifi
+        "format-wifi": "  {essid} ({signalStrength}%) ( {bandwidthDownBits} DOWN | {bandwidthUpBits} UP )", // Icon: wifi
         "format-ethernet": "  {ifname}: {ipaddr}/{cidr}", // Icon: ethernet
-        "format-disconnected": "⚠  Disconnected",
+        "format-disconnected": "Disconnected",
         "tooltip-format": "{ifname}: {ipaddr}"
     },
 
@@ -148,23 +133,28 @@
     "backlight" : {
     	"interval": 5,
     	"device": "intel_backlight",
-	"format": "{icon} {percent}%",
-    	"format-icons": ["", ""]
+	    "format": "  {percent}%",
+	    "scroll-step":1,
+    	// "format-icons": [" ", " "]
     },
 
     "pulseaudio": {
         "scroll-step": 1,
-        "format": "{icon}  {volume}%",
-        "format-bluetooth": "{icon}  {volume}%",
-        "format-muted": "",
+        // "format": "{icon}  {volume}%",
+        "format": "{icon} {volume}%  {format_source}",
+        "format-bluetooth": "VOL:  {volume}%",
+        "format-muted": "MUTE",
+        "format-source": " {volume}%",
+		"format-source-muted": "",
         "format-icons": {
             "headphones": "",
-            "handsfree": "",
+            "hands-free": "",
             "headset": "",
             "phone": "",
             "portable": "",
             "car": "",
-            "default": ["", ""]
+            "default": ["", "", ""]
+
         },
         "on-click": "pavucontrol"
     },
@@ -186,6 +176,18 @@
     "tray": {
         "icon-size": 20,
         "spacing": 10
-    }
+    },
 
+    "custom/code": {
+        "format": "VSCode",
+        "on-click": "code"
+    },
+    "custom/files": {
+      "format": "Files",
+      "on-click": "nautilus",
+    },
+    "custom/firefox": {
+      "on-click": "firefox",
+      "format": "FireFox",
+    }
 }
