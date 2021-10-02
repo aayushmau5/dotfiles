@@ -15,7 +15,7 @@ use Getopt::Long;
 my $t_warn = $ENV{T_WARN} // 50;
 my $t_crit = $ENV{T_CRIT} // 80;
 my $cpu_usage = -1;
-my $decimals = $ENV{DECIMALS} // 2;
+my $decimals = $ENV{DECIMALS} // 0;
 my $label = $ENV{LABEL} // "";
 
 sub help {
