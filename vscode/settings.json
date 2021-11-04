@@ -1,15 +1,18 @@
 {
-  "window.zoomLevel": 0,
+  "editor.smoothScrolling": true,
   "editor.fontSize": 16,
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.fontLigatures": true,
   // "editor.fontFamily": "'Fira Code'",
-  "editor.fontFamily": "'IBM Plex Mono'",
+  "editor.fontFamily": "'JuliaMono'",
+  // "editor.fontFamily": "'IBM Plex Mono'",
   "editor.cursorBlinking": "smooth",
   "editor.fontWeight": "400",
+  "editor.suggest.preview": true,
   "editor.lineHeight": 27,
-  "editor.letterSpacing": 0.3,
+  "editor.bracketPairColorization.enabled": true,
+  // "editor.letterSpacing": 0.3,
   "editor.minimap.enabled": false,
   "editor.rulers": [
     {
@@ -19,22 +22,39 @@
   ],
   "editor.tabSize": 2,
   "editor.cursorStyle": "line",
+  // "editor.guides.bracketPairs": true,
   "editor.cursorWidth": 1,
+  "editor.cursorSurroundingLines": 8,
   "editor.insertSpaces": false,
-  "editor.lineNumbers": "on",
+  "editor.lineNumbers": "relative",
   "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
   "editor.wordWrap": "off",
   "files.trimTrailingWhitespace": true,
   // workbench configs
-  "workbench.iconTheme": "material-icon-theme",
+  "workbench.iconTheme": "bearded-icons",
   "workbench.editor.highlightModifiedTabs": true,
-  "workbench.editor.wrapTabs": true,
+  "workbench.editor.wrapTabs": false,
   "workbench.editor.decorations.badges": true,
+  "breadcrumbs.enabled": false,
   "workbench.colorCustomizations": {
-    "statusBar.background": "#242424",
-    "statusBar.noFolderBackground": "#242424",
-    "statusBar.debuggingBackground": "#263238",
-    "activityBar.background": "#242424"
+    "[Default Dark+]": {
+      "statusBar.background": "#292929",
+      "statusBar.noFolderBackground": "#242424",
+      "statusBar.debuggingBackground": "#263238",
+      "activityBar.background": "#242424"
+    },
+  },
+  "editor.tokenColorCustomizations": {
+    "textMateRules": [
+      {
+        "scope": [
+          "comment"
+        ],
+        "settings": {
+          "fontStyle": "italic"
+        },
+      },
+    ]
   },
   "workbench.startupEditor": "newUntitledFile",
   "workbench.list.automaticKeyboardNavigation": false,
@@ -46,20 +66,32 @@
   "terminal.integrated.tabs.enabled": true,
   // formatter configs
   "prettier.eslintIntegration": true,
+  "[c]": {
+    "editor.defaultFormatter": "ms-vscode.cpptools"
+  },
   "[cpp]": {
     "editor.defaultFormatter": "ms-vscode.cpptools"
   },
   "[jsonc]": {
     "editor.defaultFormatter": "vscode.json-language-features",
   },
+  "[go]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "golang.go"
+  },
   "[markdown]": {
     "editor.wordWrap": "on",
-    "editor.quickSuggestions": false,
+    "editor.quickSuggestions": true,
     // "editor.fontFamily": "'SF Mono'",
-    // "editor.fontFamily": "JetBrains Mono",
-    "editor.fontFamily": "'IBM Plex Mono'",
+    // "editor.fontFamily": "'Cascadia Code'",
+    // "editor.fontFamily": "'IBM Plex Mono'",
+    "editor.fontFamily": "'Fira Code'",
+    // "editor.fontFamily": "'JuliaMono'",
     // "editor.fontFamily": "'IBM Plex Sans'",
-    // "editor.fontFamily": "Input",
+    // "editor.fontFamily": "'Jetbrains Mono'",
+    // "editor.letterSpacing": 0.5,
+    // "editor.fontFamily": "'Fira Sans'",
+    // "editor.fontWeight": "500",
   },
   "[json]": {
     "editor.quickSuggestions": {
@@ -69,7 +101,6 @@
     "gitlens.codeLens.scopes": [
       "document"
     ],
-    "editor.fontFamily": "'SF Mono'",
   },
   // Vim Configs
   "vim.useSystemClipboard": true,
@@ -209,6 +240,16 @@
     {
       "before": [
         "<leader>",
+        "e",
+        "q"
+      ],
+      "commands": [
+        "workbench.action.toggleStatusbarVisibility"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
         "c",
       ],
       "commands": [
@@ -284,8 +325,7 @@
     }
   ],
   // telementary
-  "telemetry.enableCrashReporter": false,
-  "telemetry.enableTelemetry": false,
+  "telemetry.telemetryLevel": "off",
   // misc
   "material-icon-theme.showWelcomeMessage": false,
   "svg.preview.mode": "svg",
@@ -297,5 +337,34 @@
   // },
   "window.menuBarVisibility": "toggle",
   "workbench.sideBar.location": "right",
-  "editor.inlineSuggest.enabled": true
+  "editor.inlineSuggest.enabled": true,
+  // "javascript.inlayHints.parameterNames.enabled": "all",
+  // "typescript.inlayHints.parameterNames.enabled": "all",
+  "github.copilot.enable": {
+    "*": true,
+  },
+  "cSpell.enableFiletypes": [
+    "!handlebars",
+    "!haskell",
+    "!latex",
+    "!php",
+    "!pug",
+    "!python",
+    "!restructuredtext",
+    "!rust",
+    "!scala"
+  ],
+  "diffEditor.ignoreTrimWhitespace": false,
+  "workbench.productIconTheme": "icons-carbon",
+  "chaliceIcons.showArrows": true,
+  "workbench.colorTheme": "Bearded Theme Arc EolStorm",
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    "**/Thumbs.db": true,
+    "node_modules": true
+  }
 }
