@@ -4,15 +4,17 @@
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.fontLigatures": true,
-  // "editor.fontFamily": "'Fira Code'",
-  "editor.fontFamily": "'JuliaMono'",
+  "editor.fontFamily": "'Fira Code'",
+  // "editor.fontFamily": "'Rec Mono Linear'",
+  // "editor.fontFamily": "'Jetbrains Mono'",
+  // "editor.fontFamily": "'JuliaMono'",
   // "editor.fontFamily": "'IBM Plex Mono'",
   "editor.cursorBlinking": "smooth",
   "editor.fontWeight": "400",
   "editor.suggest.preview": true,
   "editor.lineHeight": 27,
   "editor.bracketPairColorization.enabled": true,
-  // "editor.letterSpacing": 0.3,
+  // "editor.letterSpacing": -0.1,
   "editor.minimap.enabled": false,
   "editor.rulers": [
     {
@@ -22,46 +24,84 @@
   ],
   "editor.tabSize": 2,
   "editor.cursorStyle": "line",
-  // "editor.guides.bracketPairs": true,
+  // "editor.guides.bracketPairs": "active",
   "editor.cursorWidth": 1,
   "editor.cursorSurroundingLines": 8,
   "editor.insertSpaces": false,
-  "editor.lineNumbers": "relative",
+  // "editor.lineNumbers": "relative",
   "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
   "editor.wordWrap": "off",
   "files.trimTrailingWhitespace": true,
-  // workbench configs
-  "workbench.iconTheme": "bearded-icons",
   "workbench.editor.highlightModifiedTabs": true,
   "workbench.editor.wrapTabs": false,
   "workbench.editor.decorations.badges": true,
   "breadcrumbs.enabled": false,
   "workbench.colorCustomizations": {
     "[Default Dark+]": {
-      "statusBar.background": "#292929",
-      "statusBar.noFolderBackground": "#242424",
-      "statusBar.debuggingBackground": "#263238",
-      "activityBar.background": "#242424"
+      "statusBar.noFolderBackground": "#000",
+      "statusBar.debuggingBackground": "#000",
+      "editor.background": "#000",
+      "activityBar.background": "#000",
+      "statusBar.background": "#000",
+      "sideBar.background": "#000",
+      "statusBar.foreground": "#666666",
+      "sideBar.foreground": "#666666",
+      "activityBar.activeBorder": "#666666",
+      "activityBar.foreground": "#666666",
+      "activityBar.inactiveForeground": "#666666",
+      "editorLineNumber.foreground": "#303030",
+      "editor.lineHighlightBackground": "#181818",
+    },
+    "[Dark+ Black]": {
+      "statusBar.noFolderBackground": "#000",
+      "statusBar.debuggingBackground": "#000",
+      "editor.background": "#000",
+      "activityBar.background": "#000",
+      "statusBar.background": "#000",
+      "sideBar.background": "#000",
+      "statusBar.foreground": "#666666",
+      "sideBar.foreground": "#666666",
+      "activityBar.activeBorder": "#666666",
+      "activityBar.foreground": "#666666",
+      "activityBar.inactiveForeground": "#666666",
+      "editorLineNumber.foreground": "#303030",
+      "editor.lineHighlightBackground": "#181818",
+    },
+    "[Solarized Dark]": {
+      "statusBar.noFolderBackground": "#000",
+      "statusBar.debuggingBackground": "#000",
+      "editor.background": "#000",
+      "activityBar.background": "#000",
+      "statusBar.background": "#000",
+      "sideBar.background": "#000",
+      "statusBar.foreground": "#666666",
+      "sideBar.foreground": "#666666",
+      "activityBar.activeBorder": "#666666",
+      "activityBar.foreground": "#666666",
+      "activityBar.inactiveForeground": "#666666",
+      "editorLineNumber.foreground": "#303030",
+      "editor.lineHighlightBackground": "#181818",
     },
   },
   "editor.tokenColorCustomizations": {
     "textMateRules": [
       {
         "scope": [
-          "comment"
+          "comment",
         ],
         "settings": {
-          "fontStyle": "italic"
+          "fontStyle": "bold",
         },
       },
     ]
   },
   "workbench.startupEditor": "newUntitledFile",
   "workbench.list.automaticKeyboardNavigation": false,
+  "workbench.tree.indent": 20,
   // terminal configs
   "terminal.integrated.fontSize": 15,
   "terminal.integrated.cursorBlinking": true,
-  // "terminal.integrated.cursorStyle": "line",
+  "terminal.integrated.cursorStyle": "line",
   "terminal.integrated.fontFamily": "'JetBrainsMono Nerd Font'",
   "terminal.integrated.tabs.enabled": true,
   // formatter configs
@@ -85,13 +125,26 @@
     // "editor.fontFamily": "'SF Mono'",
     // "editor.fontFamily": "'Cascadia Code'",
     // "editor.fontFamily": "'IBM Plex Mono'",
-    "editor.fontFamily": "'Fira Code'",
+    "editor.fontFamily": "'Rec Mono Linear'",
+    // "editor.fontFamily": "'JuliaMono'",
+    // "editor.fontFamily": "'Fira Code'",
     // "editor.fontFamily": "'JuliaMono'",
     // "editor.fontFamily": "'IBM Plex Sans'",
     // "editor.fontFamily": "'Jetbrains Mono'",
     // "editor.letterSpacing": 0.5,
     // "editor.fontFamily": "'Fira Sans'",
     // "editor.fontWeight": "500",
+  },
+  "[mdx]": {
+    "editor.wordWrap": "on",
+    "editor.quickSuggestions": true,
+    // "editor.fontFamily": "'SF Mono'",
+    // "editor.fontFamily": "'IBM Plex Mono'",
+    // "editor.fontFamily": "'Fira Code'",
+    // "editor.fontFamily": "'JuliaMono'",
+    // "editor.fontFamily": "'Jetbrains Mono'",
+    "editor.fontFamily": "'Rec Mono Linear'",
+    "editor.formatOnSave": false
   },
   "[json]": {
     "editor.quickSuggestions": {
@@ -329,12 +382,6 @@
   // misc
   "material-icon-theme.showWelcomeMessage": false,
   "svg.preview.mode": "svg",
-  // "workbench.colorCustomizations": {
-  //   "[One Dark Pro]": {
-  //     "statusBar.background": "#2e2e2e",
-  //     "editor.background": "#2e2e2e"
-  //   }
-  // },
   "window.menuBarVisibility": "toggle",
   "workbench.sideBar.location": "right",
   "editor.inlineSuggest.enabled": true,
@@ -355,9 +402,8 @@
     "!scala"
   ],
   "diffEditor.ignoreTrimWhitespace": false,
-  "workbench.productIconTheme": "icons-carbon",
+  "workbench.productIconTheme": "fluent-icons",
   "chaliceIcons.showArrows": true,
-  "workbench.colorTheme": "Bearded Theme Arc EolStorm",
   "files.exclude": {
     "**/.git": true,
     "**/.svn": true,
@@ -366,5 +412,9 @@
     "**/.DS_Store": true,
     "**/Thumbs.db": true,
     "node_modules": true
-  }
+  },
+  "workbench.editor.untitled.hint": "hidden",
+  "workbench.colorTheme": "Tokyo Night",
+  "workbench.iconTheme": "quill-icons",
+  "gitlens.mode.active": "zen",
 }

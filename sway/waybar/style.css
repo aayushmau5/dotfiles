@@ -24,22 +24,22 @@
  * Base styles
  * -------------------------------------------------------------------------- */
 
-/* Reset all styles */
 * {
   border: none;
   border-radius: 0;
   min-height: 0;
   margin: 0;
   padding: 0;
-  /*font-family: "otf-font-awesome", "JetBrainsMono Nerd Font";*/
-  font-family: "otf-font-awesome", "FiraCode";
+  /* font-family: "otf-font-awesome", "JetBrainsMono Nerd Font"; */
+  font-family: "otf-font-awesome", "FuraCode Nerd Font";
   font-size: 12px;
+  font-weight: bold;
 }
 
 /* The whole bar */
 #waybar {
-  /* background: #30333d; */
-  background: transparent;
+  background: #1a1b26;
+  /* background: transparent; */
   color: rgb(255, 255, 255);
 }
 
@@ -60,9 +60,10 @@
   /*border-radius: 15px;*/
   /*margin: 2px 2px;*/
   /*margin-top: 3px;*/
-  background: #292b34;
+  /*background: #292b34;*/
+  background: #1a1b26;
   outline: none;
-  /*border-right: 1px solid gray;*/
+  /*border-right: 1px solid #222222;*/
 }
 
 #custom-files,
@@ -84,7 +85,7 @@
   margin-right: 2px;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
-*/
+  */
 }
 
 /* -----------------------------------------------------------------------------
@@ -96,13 +97,11 @@
   animation-iteration-count: infinite;
   animation-direction: alternate;
   /*color: #ffb935;*/
-
-  color: white;
+  color: #9aa5ce;
 }
 
 #disk {
   /*color: #c277d4;*/
-
   color: white;
 }
 
@@ -126,14 +125,12 @@
 
 #clock {
   /*color: #70d1ef;*/
-
-  color: white;
+  color: #bb9af7;
 }
 
 #cpu {
-  /* No styles */
   /*color: #e1c28d;*/
-  color: white;
+  color: #2ac3de; 
 }
 
 #cpu.warning {
@@ -149,7 +146,7 @@
   animation-iteration-count: infinite;
   animation-direction: alternate;
   /*color: #95bc7b;*/
-  color: white;
+  color: #73daca;
 }
 
 #memory.warning {
@@ -164,8 +161,7 @@
 
 #backlight {
   /*color: #67a1c5;*/
-
-  color: white;
+  color: #7aa2f7;
 }
 
 #mode {
@@ -178,6 +174,7 @@
 
 #network {
   /* No styles */
+  color: #f7768e;
 }
 
 #network.disconnected {
@@ -188,12 +185,12 @@
 #pulseaudio {
   /* No styles */
   /*color: #ff8888;*/
-
-  color: white;
+  color: #9ece6a;
 }
 
 #pulseaudio.muted {
   /* No styles */
+  color: #9ece6a;
 }
 
 #custom-spotify {
@@ -219,10 +216,11 @@
 
 #workspaces {
   background: inherit;
-  font-family: "JetBrains Mono";
-  background: #292b34;
+  /*font-family: "JetBrains Mono";*/
+  background: #1a1b26;
   padding: 1px;
   /*border-radius: 20px;
+  background: #292b34;
   margin-top: 2px;*/
 }
 

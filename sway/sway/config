@@ -17,15 +17,17 @@ set {
 
 
 # Set inner/outer gaps
-gaps inner 2
-# gaps outer 0
+gaps inner 5
+gaps outer -2
+smart_gaps on
 
 # Remove the title bar and set borders
 default_border pixel 1
 
 # GTK settings
 exec_always {
-    gsettings set org.gnome.desktop.interface gtk-theme 'Nordic-darker'
+    gsettings set org.gnome.desktop.interface gtk-theme 'Adapta-Nokto-Eta-Maia'
+    gsettings set org.gnome.desktop.interface gtk-icon-theme 'Papirus-Adapta-Nokto-Maia'
 #    gsettings set org.gnome.desktop.interface icon-theme 'Arc-X-D'
     gsettings set org.gnome.desktop.interface font-name 'Noto Sans'
 }
@@ -38,9 +40,9 @@ exec_always {
 # using azote wallpaper manager
 exec ~/.azotebg
 
-# Dual Monitor Config(Supports hotplug out of the box)
-output eDP-1 resolution 1920x1080 position 0,0
-output HDMI-A-1 resolution 1920x1080 position 1920,0
+# Dual Monitor Config(Sway supports hotplug out of the box)
+output HDMI-A-1 resolution 1600x900 position 0,0
+output eDP-1 resolution 1920x1080 position 1600,0
 
 # bindswitch lid:on output eDP-1 disable
 # bindswitch lid:off output eDP-1 enable
@@ -59,10 +61,17 @@ exec swayidle -w \
 
 ### Input configuration
 # Enable touch on tap on touchpad
-input "1267:12424:DELL083F:00_04F3:3088_Touchpad" {
+#input "1267:12424:DELL083F:00_04F3:3088_Touchpad" {
+#     dwt enabled
+#     tap enabled
+#     natural_scroll enabled
+#     middle_emulation enabled
+#}
+
+input "*" {
      dwt enabled
      tap enabled
-     natural_scroll enabled
+#     natural_scroll enabled
      middle_emulation enabled
 }
 
@@ -112,7 +121,7 @@ set $indicator-color     #4c566a
 
 # set window colors:
 #                       border             background         text                 indicator
-client.focused          $bg-color          $bg-color          $text-color          $indicator-color
+client.focused          $inactive-bg-color          $bg-color          $text-color          $indicator-color
 client.unfocused        $inactive-bg-color $inactive-bg-color $inactive-text-color 
 client.focused_inactive $inactive-bg-color $inactive-bg-color $inactive-text-color 
 client.urgent           $urgent-bg-color   $urgent-bg-color   $text-color          
@@ -285,3 +294,9 @@ exec {
 #  }}}
 
 include /etc/sway/config.d/*
+
+# See https://github.com/flameshot-org/flameshot/blob/master/docs/Sway%20and%20wlroots%20support.md
+# To make flameshot work
+exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK
+exec hash dbus-update-activation-environment 2>/dev/null && \
+     dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
