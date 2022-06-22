@@ -1,21 +1,30 @@
 {
+  "editor.accessibilitySupport": "off",
+  "editor.find.addExtraSpaceOnTop": false,
+  "editor.glyphMargin": true,
   "editor.smoothScrolling": true,
-  "editor.fontSize": 16,
+  "editor.suggestSelection": "first",
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.fontLigatures": true,
-  "editor.fontFamily": "'Fira Code'",
+  "editor.fontFamily": "'Inconsolata'",
+  // "editor.fontFamily": "'Fira Code'",
   // "editor.fontFamily": "'Rec Mono Linear'",
   // "editor.fontFamily": "'Jetbrains Mono'",
   // "editor.fontFamily": "'JuliaMono'",
   // "editor.fontFamily": "'IBM Plex Mono'",
+  // "editor.fontFamily": "'Cascadia Code'",
   "editor.cursorBlinking": "smooth",
   "editor.fontWeight": "400",
   "editor.suggest.preview": true,
-  "editor.lineHeight": 27,
+  // "editor.fontSize": 14, // Fira Code
+  "editor.fontSize": 17, // for inconsolata
+  // "editor.lineHeight": 27,
   "editor.bracketPairColorization.enabled": true,
-  // "editor.letterSpacing": -0.1,
+  // "editor.letterSpacing": -0.1, // For Fira Code
+  "editor.lineHeight": 25,
   "editor.minimap.enabled": false,
+  // "editor.cursorSmoothCaretAnimation": true,
   "editor.rulers": [
     {
       "column": 80,
@@ -29,7 +38,7 @@
   "editor.cursorSurroundingLines": 8,
   "editor.insertSpaces": false,
   // "editor.lineNumbers": "relative",
-  "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
+  "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-_",
   "editor.wordWrap": "off",
   "files.trimTrailingWhitespace": true,
   "workbench.editor.highlightModifiedTabs": true,
@@ -37,21 +46,6 @@
   "workbench.editor.decorations.badges": true,
   "breadcrumbs.enabled": false,
   "workbench.colorCustomizations": {
-    "[Default Dark+]": {
-      "statusBar.noFolderBackground": "#000",
-      "statusBar.debuggingBackground": "#000",
-      "editor.background": "#000",
-      "activityBar.background": "#000",
-      "statusBar.background": "#000",
-      "sideBar.background": "#000",
-      "statusBar.foreground": "#666666",
-      "sideBar.foreground": "#666666",
-      "activityBar.activeBorder": "#666666",
-      "activityBar.foreground": "#666666",
-      "activityBar.inactiveForeground": "#666666",
-      "editorLineNumber.foreground": "#303030",
-      "editor.lineHighlightBackground": "#181818",
-    },
     "[Dark+ Black]": {
       "statusBar.noFolderBackground": "#000",
       "statusBar.debuggingBackground": "#000",
@@ -80,8 +74,17 @@
       "activityBar.foreground": "#666666",
       "activityBar.inactiveForeground": "#666666",
       "editorLineNumber.foreground": "#303030",
-      "editor.lineHighlightBackground": "#181818",
+      "editor.lineHighlightBackground": "#131313",
     },
+    "[Default Dark+]": {
+      "statusBar.background": "#1b1b1b",
+      "activityBar.background": "#1b1b1b",
+      "sideBar.background": "#1b1b1b",
+      "editor.background": "#1b1b1b",
+    },
+    "[Vitesse Dark]": {
+      "editor.background": "#0e0e0e",
+    }
   },
   "editor.tokenColorCustomizations": {
     "textMateRules": [
@@ -90,7 +93,7 @@
           "comment",
         ],
         "settings": {
-          "fontStyle": "bold",
+          "fontStyle": "",
         },
       },
     ]
@@ -100,9 +103,11 @@
   "workbench.tree.indent": 20,
   // terminal configs
   "terminal.integrated.fontSize": 15,
+  "terminal.integrated.fontWeightBold": "500",
   "terminal.integrated.cursorBlinking": true,
-  "terminal.integrated.cursorStyle": "line",
-  "terminal.integrated.fontFamily": "'JetBrainsMono Nerd Font'",
+  // "terminal.integrated.fontFamily": "'JetBrainsMono Nerd Font'",
+  // "terminal.integrated.fontFamily": "'BlexMono Nerd Font'",
+  "terminal.integrated.fontFamily": "'FuraCode Nerd Font'",
   "terminal.integrated.tabs.enabled": true,
   // formatter configs
   "prettier.eslintIntegration": true,
@@ -117,15 +122,28 @@
   },
   "[go]": {
     "editor.formatOnSave": true,
-    "editor.defaultFormatter": "golang.go"
+  },
+  "[python]": {
+    "gitlens.codeLens.symbolScopes": [
+      "!Module"
+    ],
+    "editor.defaultFormatter": "ms-python.python",
+    "editor.formatOnSave": false
   },
   "[markdown]": {
     "editor.wordWrap": "on",
-    "editor.quickSuggestions": true,
+    "editor.quickSuggestions": {
+      "comments": "on",
+      "strings": "on",
+      "other": "on"
+    },
     // "editor.fontFamily": "'SF Mono'",
     // "editor.fontFamily": "'Cascadia Code'",
     // "editor.fontFamily": "'IBM Plex Mono'",
-    "editor.fontFamily": "'Rec Mono Linear'",
+    // "editor.fontFamily": "'Rec Mono Linear'",
+    "editor.fontFamily": "'Inconsolata'",
+    "editor.fontSize": 17,
+    "editor.lineHeight": 24,
     // "editor.fontFamily": "'JuliaMono'",
     // "editor.fontFamily": "'Fira Code'",
     // "editor.fontFamily": "'JuliaMono'",
@@ -137,7 +155,11 @@
   },
   "[mdx]": {
     "editor.wordWrap": "on",
-    "editor.quickSuggestions": true,
+    "editor.quickSuggestions": {
+      "comments": "on",
+      "strings": "on",
+      "other": "on"
+    },
     // "editor.fontFamily": "'SF Mono'",
     // "editor.fontFamily": "'IBM Plex Mono'",
     // "editor.fontFamily": "'Fira Code'",
@@ -154,6 +176,9 @@
     "gitlens.codeLens.scopes": [
       "document"
     ],
+  },
+  "[prisma]": {
+    "editor.defaultFormatter": "Prisma.prisma"
   },
   // Vim Configs
   "vim.useSystemClipboard": true,
@@ -375,7 +400,18 @@
       "after": [
         "J"
       ]
-    }
+    },
+    {
+      "before": [
+        "<leader>",
+        "t",
+        "n",
+      ],
+      "commands": [
+        "editor.lineNumbers",
+        "off"
+      ]
+    },
   ],
   // telementary
   "telemetry.telemetryLevel": "off",
@@ -402,7 +438,7 @@
     "!scala"
   ],
   "diffEditor.ignoreTrimWhitespace": false,
-  "workbench.productIconTheme": "fluent-icons",
+  "workbench.productIconTheme": "icons-carbon",
   "chaliceIcons.showArrows": true,
   "files.exclude": {
     "**/.git": true,
@@ -411,10 +447,46 @@
     "**/CVS": true,
     "**/.DS_Store": true,
     "**/Thumbs.db": true,
-    "node_modules": true
+    "**/node_modules": true
   },
   "workbench.editor.untitled.hint": "hidden",
-  "workbench.colorTheme": "Tokyo Night",
-  "workbench.iconTheme": "quill-icons",
   "gitlens.mode.active": "zen",
+  "[dockerfile]": {
+    "editor.defaultFormatter": "ms-azuretools.vscode-docker"
+  },
+  "files.associations": {
+    "*.df": "dockerfile"
+  },
+  "search.exclude": {
+    "**/.git": true,
+    "**/.github": true,
+    "**/.next": true,
+    "**/.output": true,
+    "**/.pnpm": true,
+    "**/.vscode": true,
+    "**/.yarn": true,
+    "**/dist/**": true,
+    "**/logs": true,
+    "**/node_modules": true,
+    "**/out/**": true,
+    "**/package-lock.json": true,
+    "**/tmp": true,
+    "**/yarn.lock": true
+  },
+  "workbench.iconTheme": "file-icons",
+  "workbench.localHistory.enabled": true,
+  "css.format.enable": true,
+  "workbench.colorTheme": "Themer Dark",
+  "redhat.telemetry.enabled": false,
+  "[xml]": {
+    "editor.defaultFormatter": "redhat.vscode-xml"
+  },
+  "[svg]": {
+    "editor.defaultFormatter": "jock.svg"
+  },
+  "workbench.statusBar.visible": false,
+  "[elixir]": {
+    "editor.defaultFormatter": "JakeBecker.elixir-ls"
+  },
+  "window.zoomLevel": -0.2
 }
