@@ -1,0 +1,60 @@
+[
+  {
+    "bindings": {
+      "cmd-r": "projects::OpenRecent",
+      "cmd-t": "terminal_panel::ToggleFocus",
+      "\\": "project_panel::ToggleFocus"
+    }
+  },
+  {
+    "context": "Editor && vim_mode == insert && !menu",
+    "bindings": {
+      "j k": "vim::NormalBefore"
+    }
+  },
+  {
+    "context": "Editor && (vim_mode == normal || vim_mode == visual) && !VimWaiting && !menu",
+    "bindings": {
+      "shift-j": ["workspace::SendKeystrokes", "5 j"],
+      "shift-k": ["workspace::SendKeystrokes", "5 k"],
+      "space w": "workspace::Save",
+      "space c": "pane::CloseActiveItem",
+      "space t o": "pane::CloseInactiveItems",
+      "space /": [
+        "editor::ToggleComments",
+        {
+          "advance_downwards": false
+        }
+      ],
+      "cmd-t": "terminal_panel::ToggleFocus",
+      "space space": "file_finder::Toggle",
+      "\\": "project_panel::ToggleFocus",
+      "space g": "git_panel::ToggleFocus",
+      "tab": "pane::ActivateNextItem"
+    }
+  },
+  {
+    "context": "Terminal",
+    "bindings": {
+      "cmd-t": "workspace::ToggleBottomDock",
+      "ctrl-n": "workspace::NewTerminal",
+      "cmd-shift-enter": "workspace::ToggleZoom"
+    }
+  },
+  {
+    "context": "ProjectPanel && not_editing",
+    "bindings": {
+      "n": "project_panel::NewFile",
+      "N": "project_panel::NewDirectory",
+      "d": "project_panel::Trash",
+      "g": "git_panel::ToggleFocus",
+      "\\": "project_panel::ToggleFocus"
+    }
+  },
+  {
+    "context": "GitPanel",
+    "bindings": {
+      "\\": "project_panel::ToggleFocus"
+    }
+  }
+]
