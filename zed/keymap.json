@@ -3,10 +3,18 @@
     "bindings": {
       "cmd-r": "projects::OpenRecent",
       "cmd-t": "terminal_panel::ToggleFocus",
+      "cmd-c": "workspace::ToggleRightDock",
+      "cmd-g": "outline::Toggle"
+    }
+  },
+  {
+    "context": "not_editing",
+    "bindings": {
       "\\": "project_panel::ToggleFocus"
     }
   },
   {
+    // Vim config: https://zed.dev/docs/vim
     "context": "Editor && vim_mode == insert && !menu",
     "bindings": {
       "j k": "vim::NormalBefore"
@@ -30,7 +38,13 @@
       "space space": "file_finder::Toggle",
       "\\": "project_panel::ToggleFocus",
       "space g": "git_panel::ToggleFocus",
-      "tab": "pane::ActivateNextItem"
+      "tab": "pane::ActivateNextItem",
+      "space b": "pane::GoBack",
+      "space f": "pane::GoForward",
+      "ctrl-h": "workspace::ActivatePaneLeft",
+      "ctrl-l": "workspace::ActivatePaneRight",
+      "ctrl-shift-h": "vim::ResizePaneLeft",
+      "ctrl-shift-l": "vim::ResizePaneRight"
     }
   },
   {
